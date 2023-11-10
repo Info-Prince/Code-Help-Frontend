@@ -1011,7 +1011,19 @@ footer {
 }
 
 
-@media (width <=855px) {
+/* @media (width <=855px) {
+    .section-navbar{
+        position: relative;
+        & .navbar-links , .btn-div{
+            display:none;
+        }
+        &::before{
+            position:relative;
+            content: "asd";
+            right: -78rem;
+            top: -6rem;
+            font-size: 4rem;
+        }
+    }
     
-    
-}
+} */
