@@ -1020,14 +1020,15 @@ footer {
 
  
 @media (width <=855px) {
-    /* .section-navbar{
-        & .nav-container{
     
+    .section-navbar{
+        & .nav-container{
             display: block;
             & .navbar-links , .btn-div{
-                visibility: hidden;
+               
             }
-        } */
+        }
+    }
     
     .grid-two--cols{
         place-items: center;
@@ -1065,7 +1066,7 @@ footer {
     .placement-section .grid-two--cols .placement-companies--icons {
         margin-top: 4rem;
         aspect-ratio: 1;
-        width: 40.31rem;
+        width: 38rem;
     }
     
     .grid-three--cols {
@@ -1121,10 +1122,6 @@ footer {
     }
 }
     
-
-
-
-
 @media ( width <= 700px ) {
     .section-followers .grid-four--cols{
         grid-template-columns: repeat(2, 1fr);
