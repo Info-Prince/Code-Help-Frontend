@@ -759,8 +759,8 @@ li{
             padding: 4rem;
             border-bottom: 1.9px solid #777C85;
             & .video {
-                width: 44%;
-                height: auto;
+                width: 47%;
+                height: 100%;
                 padding: 2rem;
                 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 20px 0px;
                 border-radius: 0.6rem;
@@ -821,6 +821,7 @@ li{
 
     
     .recorded-course .grid-two--cols {
+        place-content: center;
         grid-template-columns: repeat(2, minmax(40rem, 1fr));
     }
     & .recorded-dsa--video {
@@ -1017,21 +1018,17 @@ footer {
 }
 
 
+ 
 @media (width <=855px) {
-    .section-navbar{
-        position: relative;
-        & .navbar-links , .btn-div{
-            visibility: hidden;
-        }
-        &::before{
-            position:relative;
-            content: "asd";
-            right: -78rem;
-            top: -6rem;
-            font-size: 4rem;
-        }
-    }
-
+    /* .section-navbar{
+        & .nav-container{
+    
+            display: block;
+            & .navbar-links , .btn-div{
+                visibility: hidden;
+            }
+        } */
+    
     .grid-two--cols{
         place-items: center;
         grid-template-columns: 1fr;
@@ -1070,34 +1067,34 @@ footer {
         aspect-ratio: 1;
         width: 40.31rem;
     }
-
+    
     .grid-three--cols {
         place-content: center;
         grid-template-columns: repeat(1, minmax(43rem, 43rem));
     }
-
+    
     .why-choose--section .container .why-choose--subheading{
         width: 100%;
         font-weight: 600;
         font-size: 3rem;
     }
-
+    
     .course-section .container {
-
+        
         & .upcoming-course .dsa-video {
             padding-top: 5.5rem;
             & .video{
-                width: 80%;
+                width: 42rem;
             }
         }
         & .recorded-course .grid-two--cols{
-            grid-template-columns: 1fr;
+            grid-template-columns: repeat(1, minmax(43rem, 43rem));
             & .recorded-dsa--video{
-                width: 80%;
+                width: 50rem;
             }
         } 
     }
-
+    
     footer {
         .grid-four--cols {
             padding-bottom: 1rem;
@@ -1121,12 +1118,14 @@ footer {
                 }
             }       
         }
-        
     }
 }
+    
 
 
-@media ( width <=700px ) {
+
+
+@media ( width <= 700px ) {
     .section-followers .grid-four--cols{
         grid-template-columns: repeat(2, 1fr);
         gap: 4rem;
