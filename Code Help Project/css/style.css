@@ -409,7 +409,7 @@ li{
 /*! Followers start here  */
 .section-followers {
     width: 100%;
-    height: 24rem;
+    height: auto;
     margin: 9rem 0 0rem 0;
     background-color: var(--border-color);
     /* padding:2rem; */
@@ -819,6 +819,10 @@ li{
         }
     }
 
+    
+    .recorded-course .grid-two--cols {
+        grid-template-columns: repeat(2, minmax(40rem, 1fr));
+    }
     & .recorded-dsa--video {
         width: 100%;
         display: flex;
@@ -828,7 +832,7 @@ li{
         padding: 4rem;
         /* border-bottom: 1.9px solid #777C85; */
         & .video {
-            width: 80%;
+            min-width: 100%;
             height: auto;
             padding: 2rem;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 20px 0px;
@@ -1014,10 +1018,10 @@ footer {
 
 
 @media (width <=855px) {
-    /* .section-navbar{
+    .section-navbar{
         position: relative;
         & .navbar-links , .btn-div{
-            display:none;
+            visibility: hidden;
         }
         &::before{
             position:relative;
@@ -1026,7 +1030,7 @@ footer {
             top: -6rem;
             font-size: 4rem;
         }
-    } */
+    }
 
     .grid-two--cols{
         place-items: center;
@@ -1077,11 +1081,57 @@ footer {
         font-weight: 600;
         font-size: 3rem;
     }
-    .course-section .container .upcoming-course .dsa-video .video{
-        width: 100%;
-    }
-    /* .dsa-video .video {
-        width: 100%;
 
-    } */
+    .course-section .container {
+
+        & .upcoming-course .dsa-video {
+            padding-top: 5.5rem;
+            & .video{
+                width: 80%;
+            }
+        }
+        & .recorded-course .grid-two--cols{
+            grid-template-columns: 1fr;
+            & .recorded-dsa--video{
+                width: 80%;
+            }
+        } 
+    }
+
+    footer {
+        .grid-four--cols {
+            padding-bottom: 1rem;
+            grid-template-columns: 1fr;
+            & .footer {
+                text-align: center;
+                padding-bottom: 1.1rem;
+                & h1 {
+                    padding-bottom: 0.8rem;
+                }
+            }
+            & .footer-services {
+                padding-right: 0;
+                border: none;
+                right: 0;
+            }
+            & .footer-logo--content{
+                padding-bottom: 3rem;
+                & h1 {
+                    padding-bottom: 0.4rem;
+                }
+            }       
+        }
+        
+    }
+}
+
+
+@media ( width <=700px ) {
+    .section-followers .grid-four--cols{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 4rem;
+        & .followers {
+            border: none;
+        } 
+    }
 }
