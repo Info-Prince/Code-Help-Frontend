@@ -1019,14 +1019,14 @@ footer {
  
 @media (width <=855px) {
     
-    /* .section-navbar{
+    .section-navbar{
         & .nav-container{
             display: block;
             & .navbar-links , .btn-div{
                
             }
         }
-    } */
+    }
     
     .grid-two--cols{
         place-items: center;
