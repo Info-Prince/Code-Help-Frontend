@@ -92,9 +92,7 @@ li{
 .grid-four--cols {
     grid-template-columns: repeat(4, 1fr);
 }
-.why-choose--section .grid-three--cols{
-    /* grid-template-rows: repeat(2, 1fr); */
-}
+
 /*! ***********LAYOUT End HERE************  */
 
 
@@ -1021,14 +1019,14 @@ footer {
  
 @media (width <=855px) {
     
-    .section-navbar{
+    /* .section-navbar{
         & .nav-container{
             display: block;
             & .navbar-links , .btn-div{
                
             }
         }
-    }
+    } */
     
     .grid-two--cols{
         place-items: center;
