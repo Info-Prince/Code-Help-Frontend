@@ -568,6 +568,8 @@ li{
         border-bottom: 0.12rem solid black;
         padding: 8rem 0 3rem;
         & .btn-div {
+            /* grid-template-columns: repeat(2, 1fr); */
+            width: 100%;
             place-content: end;
             & .btn {
                 padding: 1.2rem 2.7rem;
@@ -1011,8 +1013,8 @@ footer {
 }
 
 
-/* @media (width <=855px) {
-    .section-navbar{
+@media (width <=855px) {
+    /* .section-navbar{
         position: relative;
         & .navbar-links , .btn-div{
             display:none;
@@ -1024,6 +1026,62 @@ footer {
             top: -6rem;
             font-size: 4rem;
         }
-    }
+    } */
+
+    .grid-two--cols{
+        place-items: center;
+        grid-template-columns: 1fr;
+        & .hero-content{
+            order: 2;
+            max-width: 40rem;
+            
+            & h1 {
+                font-size: 3.4rem;
+                word-spacing: 3px;
+            }
+            & h3 {
+                font-size: 2.8rem;
+                padding-bottom: 1rem;
+            }
+        }
+        
+        & .hero-images {
+            padding-bottom: 8rem;
+        }
+        & .bg-image{
+            width: 100%;
+            left: 4rem;
+        }
+    }   
+    .instructor-section .grid-two--cols{
+        grid-template-columns: repeat(2, 1fr);
+    } 
     
-} */
+    .instructor-section .achievement-section .babbar-acheivement {
+        margin-top: 2rem;
+        gap: 6rem;
+    }
+    .placement-section .grid-two--cols .placement-companies--icons {
+        margin-top: 4rem;
+        aspect-ratio: 1;
+        width: 40.31rem;
+    }
+
+    .grid-three--cols {
+        place-content: center;
+        grid-template-columns: repeat(1, minmax(43rem, 43rem));
+    }
+
+    .why-choose--section .container .why-choose--subheading{
+        width: 100%;
+        font-weight: 600;
+        font-size: 3rem;
+    }
+    .course-section .container .upcoming-course .dsa-video .video{
+        width: 100%;
+    }
+    /* .dsa-video .video {
+        width: 100%;
+
+    } */
+}
