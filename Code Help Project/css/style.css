@@ -82,9 +82,7 @@ li{
     display: grid;
 }
 .grid-two--cols{
-    /* grid-template-columns: repeat(2, 1fr); */
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-
+    grid-template-columns: repeat(2, 1fr);
 }
 .grid-three--cols{
     grid-template-columns: repeat(3, 1fr);
@@ -92,7 +90,9 @@ li{
 .grid-four--cols {
     grid-template-columns: repeat(4, 1fr);
 }
-
+.why-choose--section .grid-three--cols{
+    grid-template-rows: repeat(2, 1fr);
+}
 /*! ***********LAYOUT End HERE************  */
 
 
@@ -292,38 +292,49 @@ li{
     padding: 1.6rem 3.8rem;
     }
 
-.hero-images .bg-image span img{    
+.hero-images .bg-image img{
+        overflow: hidden;    
         position: relative;
-        width: 100%;
-        height: 100%;
+        max-width: 100%;
+        max-height: 100%;
     }
 .hero-images {
     & .bg-image {
         position: relative;
-        & .right-image img {
+        justify-content: center;
+        align-items: center;
+        display: flex;    
+        & .right-image {
             position: absolute;
             bottom: 8rem;
             right:  10rem;
-            width: 25%;
-            animation: ups-and-down 4s linear infinite;
-            -webkit-animation: ups-and-down 4s linear infinite;
+            & img{
+
+                width: 18rem;
+                animation: ups-and-down 4s linear infinite;
+                -webkit-animation: ups-and-down 4s linear infinite;
             }
-        & .left-image img{
+        }
+        & .left-image {
             position: absolute;
             left: 12rem;
             bottom: 7rem;
-            width: 25%;
-            animation: ups-and-down 4s linear infinite;
-            -webkit-animation: ups-and-down 4s linear infinite;
+            & img{
+                width: 18rem;
+                animation: ups-and-down 4s linear infinite;
+                -webkit-animation: ups-and-down 4s linear infinite;
             }
-        & .center-image img{
+        }
+        & .center-image {
             position: absolute;
             top: -5rem;
             left: 24rem;
-            width: 25%;
-            animation: ups-and-down 4s linear infinite;
-            -webkit-animation: ups-and-down 4s linear infinite;
+            & img{
+                width: 18rem;
+                animation: ups-and-down 4s linear infinite;
+                -webkit-animation: ups-and-down 4s linear infinite;
             }
+        }
     
     }
 } 
@@ -397,6 +408,7 @@ li{
             font-weight: 900;
         }
         & .student-para{
+            min-width: 15rem;
             color: #777c85e8;
         }
     }
@@ -538,8 +550,10 @@ li{
                line-height: 1.2;
                & img {
                    padding: 0 0 2.8rem 0;
-                   width: 18%;
-               }
+                   /* min-width: 100%;
+                   max-width: 100%; */
+                    width: 18%;
+                }
                & h1 {
                    font-size: 3rem;
                }
@@ -563,11 +577,11 @@ li{
     }
     
     & .grid-two--cols {
+        display: flex;
         border-bottom: 0.12rem solid black;
         padding: 8rem 0 3rem;
         & .btn-div {
-            /* grid-template-columns: repeat(2, 1fr); */
-            width: 100%;
+            min-width: 14rem;
             place-content: end;
             & .btn {
                 padding: 1.2rem 2.7rem;
@@ -613,7 +627,7 @@ li{
         }
 
         & .placement-companies--icons{
-            width: 70%;
+            width: 63%;
             aspect-ratio: 1;
             border: 0.3rem solid #f9f4fd;
             border-radius: 50%;
@@ -624,24 +638,24 @@ li{
             position: relative;
             animation: circle-rotate 55s linear infinite;
             -webkit-animation: circle-rotate 55s linear infinite;
-            &   .icon{
-                width: 38%;
+            & .icon{
+                width: 40%;
                 position: absolute;
             }
             & .microsoft{
                 bottom: -4rem;
-                left: 1rem;
+                /* left: 1rem; */
             }
             & .meta {
                 top: 12rem;
-                right: -8rem;
+                left: -7rem;
             }
             & .amazon {
                 top: 12rem;
-                left: -8rem;
+                right: -7rem;
             }
             & .apple{
-                right: 0;
+                right: -1rem;
                 top: -3rem;
             }
             & .google {
@@ -677,34 +691,38 @@ li{
     & .placement-companies--icons{
         & .inner-circle--icons {
             position: absolute;
-            width: 70%;
+            width: 65%;
             aspect-ratio: 1;
-            border: 6rem solid #f1e4ff;
+            border: 7rem solid #f1e4ff;
             border-radius: 50%;
             -webkit-border-radius: 50%;
             -moz-border-radius: 50%;
             -ms-border-radius: 50%;
             -o-border-radius: 50%;
             top: 6.3rem;
-            left: 6rem;
-            animation: circle-reverse 30s linear reverse infinite;
-            -webkit-animation: circle-reverse 30s linear reverse infinite;
+            left: 6.4rem;
+            animation: circle-reverse 24s linear reverse infinite;
+            -webkit-animation: circle-reverse 24s linear reverse infinite;
             & .icon{
-                width: 100%;
+                width: 120%;
                 position: absolute;
                 top: 8rem;
             }
             & .flipkart{
-                right: 0rem;
-                top: -8rem;
+                right: -1rem;
+                top: -7rem;
             }
             & .ola{
-                top: 0;
-                right: 8rem;
+                top: -1rem;
+                right: 5rem;
             }
             & .linkedin{
-                top: 0;
-                right: -8rem;
+                top: -1rem;
+                right: -7rem;
+            }
+            & .adobe {
+                top: 5rem;
+                right: -1rem;
             }
         }
     }
@@ -757,8 +775,8 @@ li{
             padding: 4rem;
             border-bottom: 1.9px solid #777C85;
             & .video {
-                width: 47%;
-                height: 100%;
+                width: 44%;
+                height: auto;
                 padding: 2rem;
                 box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 20px 0px;
                 border-radius: 0.6rem;
@@ -791,7 +809,7 @@ li{
                 & .amount-to--pay{
                     padding: 2rem 0 0.3rem 0;
                     font-size: 1.6rem;
-                    padding-right: 3rem;
+                    /* padding-right: 3rem; */
                     font-weight: 900;
                     & :nth-child(1){
                         padding-right: 2rem;
@@ -817,11 +835,6 @@ li{
         }
     }
 
-    
-    .recorded-course .grid-two--cols {
-        place-content: center;
-        grid-template-columns: repeat(2, minmax(40rem, 1fr));
-    }
     & .recorded-dsa--video {
         width: 100%;
         display: flex;
@@ -831,7 +844,7 @@ li{
         padding: 4rem;
         /* border-bottom: 1.9px solid #777C85; */
         & .video {
-            min-width: 100%;
+            width: 80%;
             height: auto;
             padding: 2rem;
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 20px 0px;
@@ -974,158 +987,295 @@ footer {
     html {
         font-size: 56.25%;
     }
-    .grid-three--cols{
-        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-        /* padding: 2rem 20rem; */
+}
+@media (width <= 1100px) {
+    html {
+        font-size: 50%;
     }
 }
-
- @media (width <= 1100px) {
+@media (width <=1000px) {
     /* html {
-        font-size: 50%;
+        font-size: 50%
     } */
-    .section-hero{
-        & .hero-content  {
-            & h1{    
-                font-size: 4.3rem;
+    .section-navbar .nav-container{
+        display: block;
+    }
+    .hero-content{
+        & .hero-heading{
+            font-size: 4rem;
+        }
+        & .hero-subheading{
+            font-size: 2.8rem;
+        }       
+    }   
+}
+
+@media ( width <= 850px ) {
+    .grid-two--cols{
+        grid-template-columns: 1fr;
+        place-items: center;
+        row-gap: 10rem;
+    }
+    .section-hero{        
+        & .hero-content{
+            order: 2;
+        }
+        & .grid-two--cols{
+            grid-template-columns: minmax(240px, 1fr);
+        }
+        & .hero-images{
+            & .bg-image img{
+                max-width: 112%;
             }
-            & h3{
+            & .bg-image .center-image {
+                left: 27rem;
+            }
+        }
+        & .hero-content{
+            & .btn-div button {
+                font-size: 1.8rem;
+                padding: 1.6rem 1.5rem;
+            }
+        }
+    }
+    .grid-three--cols{
+        grid-template-columns: repeat(auto-fit, minmax(240px , 1fr));
+    }
+    .grid-four--cols{
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .section-followers .grid-four--cols{
+        row-gap: 5rem;
+        & .followers{
+            border: none;
+        }
+    }
+
+    .why-choose--section {
+        & .Why-choose--heading{
+            & .why-choose--subheading {
                 font-size: 3rem;
+                font-weight: 700;
+                width: 100%;
+                margin: 0 auto;
             }
-            & .btn-div{
-                /* font-size: 5rem; */
-                & .btn{
-                    font-size: 1.7rem;
-                    padding: 1rem 2rem;
+        }
+    }
+    .instructor-section{
+        & .grid-two--cols{
+            grid-template-columns: repeat(3, 1fr);
+            padding: 7rem 0 1.8rem;
+            & .instructor-heading{
+                grid-area: 1/1/2/3;
+                width: 100%;
+                font-size: 3.2rem;
+            }
+        }
+        & .achievement-section .babbar-image--achievment{
+            & .grid-three--cols{
+                grid-template-columns: 1fr;
+                row-gap: 4rem;
+            }
+            & .image-and--content{
+                & img{
+                    min-width: 100%;
+                    max-width: 100%;
+                }
+                & p{
+                    text-align: center;
                 }
             }
         }
-        & .hero-images{
+    }
+
+    .placement-section {
+        & .container {
+            padding: 0 3rem 8rem;
+            text-align: start;
+            & .placement-title {
+                & h1{
+                    font-size: 2.4rem;
+                }
+                & h2 {
+                    font-size: 3.9rem;
+                }
+                & p {
+                    line-height: 1.4;
+                    font-size: 2rem;
+                }
+            }
+        }
+    }
+
+    
+    footer {
+        & .grid-four--cols{
+            grid-template-columns: 1fr;
+            row-gap: 2rem;
+            padding-bottom: 2rem;
+        }
+        & .footer {
+            text-align: center;
+            border: none;
+            & h1 {
+                padding-bottom: 0.5rem;
+            }
+        }
+        & .footer-services{
+            position: static;
+            padding: 0;
+        }
+    }
+} 
+
+@media ( width <= 550px) {
+    .section-navbar .nav-container {
+        text-align: center;
+        .navbar-links, .nav-button {
+        display: none;
+        }
+    }
+    .section-hero{        
+        & .hero-content{
+            order: 2;
+            width: 100%;
+            & .hero-heading{
+                font-size: 3.6rem;
+            }
+        }
+        & .hero-images {
             & .bg-image{
-                & span {
-                    & img {
-                        right: 4rem;
-                        width: 107%;
-                        height: 110%;
+                & .iimage {
+                    width: 11rem;
+                }
+                & .right-image{
+                    bottom: 5rem;
+                    right: 5rem;
+                }
+                & .left-image{
+                    left: 5rem;
+                    bottom: 5rem;
+                
+                }
+                & .center-image{
+                    left: 14rem;
+                }
+            }
+        }
+    }
+    .instructor-section{
+        & .achievement-section .babbar-image--achievment{
+            & .image-and--content{
+                & h1{
+                    font-size: 2.3rem;
+                }
+                & p {
+                    font-size: 2rem;
+                }
+            }
+        }
+        & .grid-two--cols {
+            & .instructor-heading {
+                font-size: 2.6rem;
+                letter-spacing: 1px;
+            }
+            & .instructor-button .btn2 button {
+                font-size: 2rem;
+                padding: 1rem 1rem;
+            }
+        }
+    }
+    .placement-section .grid-two--cols {
+        overflow: hidden;
+        & .placement-title h2{
+            font-size: 2rem;
+            font-weight: 600;
+            line-height: 1.7;
+        }
+        & .rotate {
+            width: 100%;
+            /* overflow: hidden; */
+            & .netflix {
+                left: 1rem;
+                top: -5rem;
+            }
+            & .amazon{
+                right: -9rem;
+            }
+            & .meta {
+                left: -9rem;
+            }
+            & .microsoft {
+                left: 2rem;
+                bottom: -6rem;
+            }
+            & .inner-circle--icons{
+                width: 62%;
+                top: 8.5rem;
+                left: 8.5rem;
+                /* border: 7rem solid var(--gradiant-color) ; */
+            }
+        }  
+    }
+
+    .why-choose--section .grid-three--cols{
+        padding: 0   4rem;
+        & .flex {
+            padding: 7rem 4rem;
+        }
+    } 
+}
+
+@media (width <= 650px) {
+    .course-section {
+        & .container {
+            padding: 0 3rem;
+        }
+        & .upcoming-course {
+            & .dsa-video {
+                padding: 4rem 0;
+                .video{
+                    min-width: 100%;
+                    max-width: 100%;
+                    & p {
+                        font-size: 2rem;
+                    }
+                    & .amount-to--pay {
+                        & span {
+                            font-size: 2rem;
+                        }
                     }
                 }
             }
-        }
-    }
-    
-}
-
-
- 
-@media (width <=855px) {
-    
-    .section-navbar{
-        & .nav-container{
-            display: block;
-            & .navbar-links , .btn-div{
-               
-            }
-        }
-    }
-    
-    .grid-two--cols{
-        place-items: center;
-        grid-template-columns: 1fr;
-        & .hero-content{
-            order: 2;
-            max-width: 40rem;
-            
-            & h1 {
-                font-size: 3.4rem;
-                word-spacing: 3px;
-            }
-            & h3 {
-                font-size: 2.8rem;
-                padding-bottom: 1rem;
-            }
-        }
-        
-        & .hero-images {
-            padding-bottom: 8rem;
-        }
-        & .bg-image{
-            width: 100%;
-            left: 4rem;
-        }
-    }   
-    .instructor-section .grid-two--cols{
-        grid-template-columns: repeat(2, 1fr);
-    } 
-    
-    .instructor-section .achievement-section .babbar-acheivement {
-        margin-top: 2rem;
-        gap: 6rem;
-    }
-    .placement-section .grid-two--cols .placement-companies--icons {
-        margin-top: 4rem;
-        aspect-ratio: 1;
-        width: 38rem;
-    }
-    
-    .grid-three--cols {
-        place-content: center;
-        grid-template-columns: repeat(1, minmax(43rem, 43rem));
-    }
-    
-    .why-choose--section .container .why-choose--subheading{
-        width: 100%;
-        font-weight: 600;
-        font-size: 3rem;
-    }
-    
-    .course-section .container {
-        
-        & .upcoming-course .dsa-video {
-            padding-top: 5.5rem;
-            & .video{
-                width: 42rem;
-            }
-        }
-        & .recorded-course .grid-two--cols{
-            grid-template-columns: repeat(1, minmax(43rem, 43rem));
-            & .recorded-dsa--video{
-                width: 50rem;
-            }
-        } 
-    }
-    
-    footer {
-        .grid-four--cols {
-            padding-bottom: 1rem;
-            grid-template-columns: 1fr;
-            & .footer {
-                text-align: center;
-                padding-bottom: 1.1rem;
-                & h1 {
-                    padding-bottom: 0.8rem;
+            & .upcoming-course--heading{
+                & p  {
+                    font-size: 3rem;
                 }
             }
-            & .footer-services {
-                padding-right: 0;
-                border: none;
-                right: 0;
-            }
-            & .footer-logo--content{
-                padding-bottom: 3rem;
-                & h1 {
-                    padding-bottom: 0.4rem;
+            & .grid-two--cols{
+                row-gap: 0;
+                & .recorded-dsa--video {
+                    padding: 4rem 0;
+                    .video{
+                        min-width: 100%;
+                        max-width: 100%;
+                        & p {
+                            font-size: 2rem;
+                        }
+                        & .amount-to--pay {
+                            & span {
+                                font-size: 2rem;
+                            }
+                        }
+                    }
                 }
-            }       
+                & .upcoming-course--heading{
+                    & p  {
+                        font-size: 2rem;
+                    }
+                }   
+            }
         }
-    }
-}
-    
-@media ( width <= 700px ) {
-    .section-followers .grid-four--cols{
-        grid-template-columns: repeat(2, 1fr);
-        gap: 4rem;
-        & .followers {
-            border: none;
-        } 
+
     }
 }
